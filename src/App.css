@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: 'Goku';
+  src: url('assets/fonts/Goku.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Goku-Stencil';
+  src: url('assets/fonts/Goku Stencil.ttf') format('truetype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+:root {
+  --primary: #6947ef;
+  --black: #0f0f0f;
+
+  --wfull: 100dvw;
+  --hfull: 100dvh;
+  --w768: 768px;
+  --w425: 425px;
+  --w375: 375px;
+}
+body {
+  background: #0f0f0f;
+  color: #fff;
+  width: 100dvw;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: inherit;
+}
+
+.cursor {
+  pointer-events: none;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.cursor__ball circle {
+  fill: #fff;
+}
+.sec {
+  width: 100%;
+  height: 100vh;
+}
+
+#splashScreen {
+  width: var(--wfull);
+  height: 100vh;
+  background: #000;
+  z-index: 111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+#sectionText {
+  font-family: 'Goku';
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+#sectionText span {
+  all: inherit;
+  display: inline-block;
+  transform: translateY(80%);
+  opacity: 0;
+}
+#circularOpening {
+  width: var(--wfull);
+  height: 100vh;
+  background: var(--primary);
+  z-index: 111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+.innerCircleText {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innerCircleText {
+  font-size: 28px;
+  font-family: 'Goku';
+}
+.innerCircleText .dot {
+  font-size: 28px;
+  font-family: 'Goku';
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  #sectionText {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 425px) {
+  #sectionText {
+    font-size: 1rem;
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 375px) {
+  #sectionText {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+}
