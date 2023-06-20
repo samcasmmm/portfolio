@@ -61,7 +61,7 @@ function App() {
     <main>
       <Cursor />
       <Home />
-      {/* <section id='splashScreen'>
+      <section id='splashScreen'>
         <div className='headingText'>
           <p id='sectionText'>
             <span>Passionate frontend developer dedicated</span>
@@ -73,14 +73,14 @@ function App() {
             <span> user-friendly web experiences.</span>
           </p>
         </div>
-      </section> */}
-      <section id='circularOpening'>
+      </section>
+      {/* <section id='circularOpening'>
         <div id='innerCircle'>
           <p className='innerCircleText'>
             SB <span className='dot'>.</span>
           </p>
         </div>
-      </section>
+      </section> */}
       <section className='sec'>1</section>
       <section className='sec'>1</section>
       <section className='sec'>1</section>

@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+  margin-top: -5rem;
 }
 
 .name {
@@ -46,26 +47,23 @@
 .intro {
   margin-top: 2rem;
   margin: 2rem;
-  width: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .introtext {
   letter-spacing: 5px;
   font-size: 14px;
   text-align: center;
   line-height: 25px;
+  width: 70%;
 }
 .it-bold {
   font-family: 'Goku';
   font-size: 18px;
 }
-.letterBox {
-  position: absolute;
-}
-.letter {
-  font-family: 'Goku';
-  font-size: 4rem;
-  color: #fff;
-}
+
 .letter-out {
   position: absolute;
   font-family: 'Goku';
@@ -75,20 +73,21 @@
   left: -5px;
   z-index: -1;
 }
-.letterBox.lb-1 {
-  top: 0;
-  left: 120px;
-  animation: hovering 2s linear 0.3s infinite alternate;
+.heroContainer .imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
 }
-.letterBox.lb-2 {
-  top: 500px;
-  left: 150px;
-  animation: hovering 2s linear 0.5s infinite alternate;
+.heroContainer .imgContainer img {
+  width: 60px;
+  height: 60px;
 }
-.letterBox.lb-3 {
-  top: 220px;
-  right: 100px;
-  animation: hovering 2s linear 0.7s infinite alternate;
+.heroContainer .SkillScroll {
+  width: 100%;
+  margin: 1rem;
+  margin-top: 3rem;
 }
 @keyframes hovering {
   0% {
@@ -107,5 +106,29 @@
   .name .firstName,
   .name .lastName {
     font-size: 6rem;
+  }
+  .heroContainer {
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 425px) {
+  .name .firstName-outline,
+  .name .firstName,
+  .name .lastName {
+    font-size: 5rem;
+  }
+  .heroContainer .imgContainer img {
+    width: 30px;
+    height: 30px;
+  }
+  .heroContainer {
+    margin-top: 0rem;
+  }
+}
+@media (max-width: 375px) {
+  .name .firstName-outline,
+  .name .firstName,
+  .name .lastName {
+    font-size: 5rem;
   }
 }
