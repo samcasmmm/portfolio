@@ -1,98 +1,137 @@
 nav {
-  width: 100dvw;
+  width: 100%;
+  /* height: 60px; */
   display: flex;
-  align-items: center;
-  position: relative;
+  justify-content: center;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
 }
 
-nav .container {
+nav .navContainer {
+  width: 100%;
+  height: 60px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 0.5rem 2rem;
+  transition: all 0.3s ease;
+}
+nav .navContainer .logo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--ffGoku);
+}
+nav .navContainer .logo p span {
+  color: var(--sec);
 }
 
-nav .container .logo {
-  font-size: 28px;
-  font-family: 'Goku';
-}
-nav .container .logo .dot {
-  font-size: 28px;
-  font-family: 'Goku';
-  color: var(--primary);
-}
-nav .container .hamburger {
+nav .nav-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-right: 1rem; */
+  gap: 1rem;
+}
+
+nav .nav-list .nav-item {
+  cursor: pointer;
+  font-family: 'TrumpGothic';
+}
+nav .nav-list :hover {
+  cursor: pointer;
+  color: var(--sec);
+}
+nav .nav-list .active {
+  cursor: pointer;
+  color: var(--sec);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.navContainer .hamburgerMenu {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
-  position: relative;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
-  width: auto;
-  height: auto;
-  padding: 0.5rem;
+  display: none;
 }
-nav .container .hamburger .line1,
-nav .container .hamburger .line2 {
-  display: block;
+.navContainer .hamburgerMenu .line1 {
   background: #fff;
   width: 30px;
   height: 1px;
-  border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
-
-nav .container .hamburger .line1.open {
-  transform: rotate(225deg) translate(-4px);
+.navContainer .hamburgerMenu .line2 {
+  background: #fff;
+  width: 30px;
+  height: 1px;
+  transition: all 0.3s ease-in-out;
 }
-nav .container .hamburger .line2.open {
-  transform: rotate(-225deg) translate(-4px);
+.navContainer .hamburgerMenu .line1.open {
+  transform: rotate(45deg) translateX(4px);
 }
-
-.linear-color {
-  background: radial-gradient(#6947ef 100%, #010101 20%);
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  opacity: 0.4;
-  filter: blur(200px);
-  opacity: 0.6;
-  top: -500px;
-  left: 50%;
-  transform: translate(-50%);
+.navContainer .hamburgerMenu .line2.open {
+  transform: rotate(-45deg) translateX(4px);
 }
 
 @media (max-width: 768px) {
-  .linear-color {
-    top: -300px;
-    width: 440px;
-    height: 440px;
+  nav .navContainer {
+    padding: 0.5rem 0rem;
   }
-  nav .container {
-    padding: 1.5rem 1rem;
+  nav .nav-list {
+    flex-direction: column;
+    display: none;
+  }
+  nav .navContainer.expand {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    overflow: hidden;
+    padding: 0.5rem 0rem;
+    background: #202020;
+  }
+  nav .navContainer.expand .nav-list {
+    display: flex;
+  }
+  nav .navContainer .logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+  }
+  .navContainer .hamburgerMenu {
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  nav .nav-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--ffGoku);
+    font-size: 2rem;
+  }
+
+  nav .nav-list .active::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: var(--sec);
+    top: 50%;
+    margin-left: 1rem;
+    transition: all 0.2s ease-in-out;
   }
 }
+
 @media (max-width: 425px) {
-  .linear-color {
-    top: -100px;
-    width: 300px;
-    height: 300px;
-  }
-  nav .container {
-    padding: 1rem 1rem;
-  }
-}
-@media (max-width: 375px) {
-  .linear-color {
-    top: -100px;
-    width: 300px;
-    height: 300px;
-  }
-  nav .container {
-    padding: 1rem 1rem;
+  nav .nav-list .active::after {
+    width: 60px;
   }
 }

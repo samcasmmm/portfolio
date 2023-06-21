@@ -5,8 +5,8 @@ import Hero from '../../components/hero/Hero';
 
 const Home = () => {
   return (
-    <div className='homeContainer'>
-      <Navbar />
+    <div className='homeContainer' id='home'>
+      <div className='linearGradient'></div>
       <Hero />
     </div>
   );

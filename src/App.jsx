@@ -1,8 +1,12 @@
 import './App.css';
 import Home from './page/home/Home';
+import About from './page/about/About.jsx';
+import Project from './page/project/Project.jsx';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cursor from './components/Cursor';
 import { gsap } from 'gsap';
+import Navbar from './components/navbar/Navbar';
 function App() {
   useEffect(() => {
     const handleWindowBlur = () => {
@@ -23,35 +27,6 @@ function App() {
       opacity: 0,
     });
 
-    gsap.to('#innerCircle', {
-      y: 0,
-      delay: 0.3,
-      duration: 1.5,
-      scale: 1,
-      opacity: 1,
-    });
-    gsap.to('#innerCircle', {
-      y: 0,
-      delay: 0.6,
-      duration: 1.5,
-      scale: 3,
-      opacity: 1,
-    });
-    gsap.to('#innerCircle', {
-      y: 0,
-      delay: 0.9,
-      duration: 1.5,
-      scale: 20,
-      opacity: 1,
-    });
-    gsap.to('#circularOpening', {
-      y: 0,
-      display: 'none',
-      delay: 1.8,
-      duration: 1.8,
-      opacity: 0,
-    });
-
     return () => {
       window.removeEventListener('blur', handleWindowBlur);
     };
@@ -59,9 +34,16 @@ function App() {
 
   return (
     <main>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/projects' element={<Project />} />
+        </Routes>
+      </Router>
       <Cursor />
-      <Home />
-      {/* <section id='splashScreen'>
+      <section id='splashScreen'>
         <div className='headingText'>
           <p id='sectionText'>
             <span>Passionate frontend developer dedicated</span>
@@ -73,17 +55,7 @@ function App() {
             <span> user-friendly web experiences.</span>
           </p>
         </div>
-      </section> */}
-      <section id='circularOpening'>
-        <div id='innerCircle'>
-          <p className='innerCircleText'>
-            SB <span className='dot'>.</span>
-          </p>
-        </div>
       </section>
-      <section className='sec'>1</section>
-      <section className='sec'>1</section>
-      <section className='sec'>1</section>
     </main>
   );
 }

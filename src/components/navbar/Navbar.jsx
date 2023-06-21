@@ -1,25 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
-  const [isOpenNav, setIsOpenNav] = useState(false);
+  const [activeItem, setActiveItem] = useState('Home');
+  const [isNavOpen, setisNavOpen] = useState(false);
+
+  const navItems = [
+    {
+      label: 'Home',
+      path: '/',
+    },
+    {
+      label: 'About',
+      path: '/about',
+    },
+    {
+      label: 'Projects',
+      path: '/projects',
+    },
+    {
+      label: 'Contact',
+      path: '/contact',
+    },
+  ];
+
+  const handleClick = (item) => {
+    setActiveItem(item);
+    // scrollToSelector(`#${item.toLowerCase()}`);
+    setisNavOpen(false);
+  };
+
+  const scrollToSelector = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav>
-      <div className='container'>
-        <div className='linear-color'></div>
-        <p className='logo'>
-          SB <span className='dot'>.</span>
-        </p>
+      <div className={!isNavOpen ? 'navContainer' : 'navContainer expand'}>
+        <div className='logo hoverable'>
+          <p>
+            SB <span>.</span>
+          </p>
+        </div>
+        <div className='nav-list'>
+          {navItems.map((item, index) => (
+            <Link
+              to={item.path}
+              key={index}
+              className={`hoverable nav-items ${
+                activeItem === item.label ? 'active' : ''
+              }`}
+              onClick={() => handleClick(item.label)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
         <div
-          className='hamburger hoverable'
+          className='hamburgerMenu'
           onClick={() => {
-            setIsOpenNav(!isOpenNav);
+            setisNavOpen(!isNavOpen);
           }}
         >
-          <span className={!isOpenNav ? 'line1 ' : 'line1  open'}></span>
-          <span className={!isOpenNav ? 'line2 ' : 'line2  open'}></span>
+          <span className={!isNavOpen ? 'line1' : 'line1 open'}></span>
+          <span className={!isNavOpen ? 'line2' : 'line2 open'}></span>
         </div>
       </div>
-      <section id='expandedNav' className='expandedNav'></section>
     </nav>
   );
 };

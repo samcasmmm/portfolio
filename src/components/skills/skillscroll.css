@@ -1,0 +1,22 @@
+.skill-scroll-container {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+}
+.skill-scroll-container .skill-slide {
+  display: inline-block;
+  /* animation: 10s slide infinite linear; */
+}
+.skill-scroll-container .skill-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
