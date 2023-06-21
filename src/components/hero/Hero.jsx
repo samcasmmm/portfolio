@@ -62,9 +62,9 @@ const Hero = () => {
           <img key={index} src={`assets/icons/${icon}.png`} alt={icon} />
         ))}
       </div>
-      <div className='SkillScroll'>
+      {/* <div className='SkillScroll'>
         <SkillScroll />
-      </div>
+      </div> */}
     </div>
   );
 };

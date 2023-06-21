@@ -1,33 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState('Home');
   const [isNavOpen, setisNavOpen] = useState(false);
 
-  const navItems = ['Home', 'About', , 'Projects', 'Contact'];
+  const navItems = [
+    {
+      label: 'Home',
+      path: '/',
+    },
+    {
+      label: 'About',
+      path: '/about',
+    },
+    {
+      label: 'Projects',
+      path: '/projects',
+    },
+    {
+      label: 'Contact',
+      path: '/contact',
+    },
+  ];
+
   const handleClick = (item) => {
     setActiveItem(item);
-    console.log(item);
+    // scrollToSelector(`#${item.toLowerCase()}`);
+    setisNavOpen(false);
   };
+
+  const scrollToSelector = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav>
       <div className={!isNavOpen ? 'navContainer' : 'navContainer expand'}>
-        <div className='logo'>
+        <div className='logo hoverable'>
           <p>
             SB <span>.</span>
           </p>
         </div>
         <div className='nav-list'>
-          {navItems.map((item) => (
-            <p
-              key={item}
+          {navItems.map((item, index) => (
+            <Link
+              to={item.path}
+              key={index}
               className={`hoverable nav-items ${
-                activeItem === item ? 'active' : ''
+                activeItem === item.label ? 'active' : ''
               }`}
-              onClick={() => handleClick(item)}
+              onClick={() => handleClick(item.label)}
             >
-              {item}
-            </p>
+              {item.label}
+            </Link>
           ))}
         </div>
         <div

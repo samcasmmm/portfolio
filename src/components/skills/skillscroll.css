@@ -5,7 +5,7 @@
 }
 .skill-scroll-container .skill-slide {
   display: inline-block;
-  animation: 10s slide infinite linear;
+  /* animation: 10s slide infinite linear; */
 }
 .skill-scroll-container .skill-slide img {
   height: 50px;

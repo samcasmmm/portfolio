@@ -23,11 +23,11 @@ const skillScroll = () => {
           <img key={index} src={`assets/icons/${icon}.png`} alt={icon} />
         ))}
       </div>
-      <div className='skill-slide'>
+      {/* <div className='skill-slide'>
         {SkillsList.map((icon, index) => (
           <img key={index} src={`assets/icons/${icon}.png`} alt={icon} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
