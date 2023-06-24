@@ -15,13 +15,15 @@
   border-radius: 1rem;
   margin: 1rem;
   overflow: hidden;
-}
-.img1 img {
-  width: inherit;
-  height: inherit;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  object-fit: cover;
+  filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+.img1:hover {
+  filter: blur(0px);
 }
 .aboutMe {
   display: flex;
@@ -87,9 +89,12 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 15s infinite linear;
+  animation: gradientAnimation 20s infinite linear;
   background-size: 1000% auto;
   font-family: var(--ffGoku);
+}
+.introText h3 span:hover {
+  animation: gradientAnimation 5s infinite linear;
 }
 .skillTitle {
   position: relative;

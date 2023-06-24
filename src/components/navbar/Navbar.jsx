@@ -41,9 +41,11 @@ const Navbar = () => {
     <nav>
       <div className={!isNavOpen ? 'navContainer' : 'navContainer expand'}>
         <div className='logo hoverable'>
-          <p>
-            SB <span>.</span>
-          </p>
+          <Link to='/'>
+            <p>
+              SB <span>.</span>
+            </p>
+          </Link>
         </div>
         <div className='nav-list'>
           {navItems.map((item, index) => (

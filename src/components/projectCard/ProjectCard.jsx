@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProjectCard.css';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = () => {
   return (
@@ -19,11 +20,13 @@ const ProjectCard = () => {
           </p>
           <div className='callTOAction'>
             <div className='livePreview'>Live Preview</div>
-            <img
-              className='githubLink'
-              src='assets/icons/github.png'
-              width={40}
-            />
+            <Link to='https://www.google.com' target='__blank'>
+              <img
+                className='githubLink'
+                src='assets/icons/github.png'
+                width={40}
+              />
+            </Link>
           </div>
         </div>
       </div>

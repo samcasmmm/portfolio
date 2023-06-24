@@ -1,6 +1,5 @@
 .heroContainer {
   width: 100%;
-  min-height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +13,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 5rem;
 }
 .name .firstName {
   font-family: 'Goku';
@@ -35,6 +35,7 @@
   transform: translateY(100px);
   transition: transform 0.2s;
   opacity: 0;
+  /* animation: hovering 2s infinite linear; */
 }
 .name .lastName {
   font-family: 'Goku';
@@ -91,6 +92,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-family: 'Inter';
+}
 @keyframes hovering {
   0% {
     transform: translateY(-10px);
@@ -125,6 +137,9 @@
   }
   .heroContainer {
     margin-top: 0rem;
+  }
+  .weather {
+    flex-direction: column;
   }
 }
 @media (max-width: 375px) {

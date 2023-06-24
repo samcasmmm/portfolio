@@ -5,8 +5,10 @@ import Project from './page/project/Project.jsx';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cursor from './components/Cursor';
+import SplashScreen from './components/SplashScreen';
 import { gsap } from 'gsap';
 import Navbar from './components/navbar/Navbar';
+import Contactme from './page/contact/Contactme';
 function App() {
   useEffect(() => {
     const handleWindowBlur = () => {
@@ -36,26 +38,15 @@ function App() {
     <main>
       <Router>
         <Navbar />
+        <Cursor />
+        <SplashScreen />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/projects' element={<Project />} />
+          <Route path='/contact' element={<Contactme />} />
         </Routes>
       </Router>
-      <Cursor />
-      <section id='splashScreen'>
-        <div className='headingText'>
-          <p id='sectionText'>
-            <span>Passionate frontend developer dedicated</span>
-          </p>
-          <p id='sectionText'>
-            <span> to creating visually stunning and </span>
-          </p>
-          <p id='sectionText'>
-            <span> user-friendly web experiences.</span>
-          </p>
-        </div>
-      </section>
     </main>
   );
 }

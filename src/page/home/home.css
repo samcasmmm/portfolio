@@ -1,5 +1,6 @@
 .homeContainer {
   width: inherit;
+  overflow: hidden;
 }
 
 .linearGradient {
@@ -13,4 +14,12 @@
   border-radius: 50%;
   filter: blur(800px);
   z-index: -1;
+}
+
+@media (max-width: 425px) {
+  .linearGradient {
+    width: 300px;
+    height: 300px;
+    top: -200px;
+  }
 }
