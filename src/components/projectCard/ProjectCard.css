@@ -1,81 +1,156 @@
 .projectcard-container {
-  width: 300px;
-  height: max-content;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  background: #202020;
-  /* border: 1px solid #0acf83;
-  box-shadow: 0px 4px 4px rgba(10, 207, 131, 0.25); */
-  border-radius: 12px;
-  transition: all 0.5s linear;
-  transform-origin: top top;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto auto;
+  padding-bottom: 2.5rem;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid rgb(255, 255, 255, 0.1);
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 3px -1px;
 }
 
-.projectcard-container .pc-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
+.img-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
 }
 
-.projectcard-container .pc-body .projectPreview {
-  width: 270px;
-  height: 234px;
-  overflow: hidden;
-  background: #d9d9d9;
-  border-radius: 12px;
-}
-.projectcard-container .pc-body .projectPreview img {
-  width: inherit;
-  height: inherit;
-}
-.projectcard-container .pc-body .callTOAction {
+.projectCardImg img {
+  height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-top: 0.5rem;
+  aspect-ratio: 3 / 2;
 }
-.projectcard-container .pc-body .callTOAction .livePreview {
-  background: #0acf83;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
+
+.projectCardTitle {
+  padding: 0px 15px;
+  width: 100%;
+  font-size: 1.75rem;
 }
-.projectcard-container .pc-body .callTOAction .livePreview:hover {
-  font-size: 17px;
-}
-.projectcard-container .pc-body .head {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 10px;
-  margin: 0.5rem;
-}
-.projectcard-container .pc-body .head .project-title {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: #ffffff;
-}
-.projectcard-container .pc-body .head .project-desc {
-  font-family: 'Inter';
-  font-style: normal;
+.projectCardTitle h3 {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
+  letter-spacing: 2px;
+  color: rgb(238, 237, 240);
+  padding: 2rem 0px 0.5rem;
+  font-size: 2rem;
+}
+.projectCardTitle hr {
+  width: 50px;
+  height: 3px;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border: 0px;
+  background: linear-gradient(
+    121.57deg,
+    var(--third) 18.77%,
+    var(--sec) 60.15%
+  );
+}
+
+.projectCardDesc {
+  width: 100%;
+  padding: 0px 15px;
+  line-height: 24px;
+}
+
+.projectCardFooter {
+  margin-top: 20px;
+}
+.projectCardFooter .techTitle {
+  padding: 0px 15px;
+  z-index: 20;
+  width: 100%;
+  font-size: 1.1rem;
+}
+.projectCardFooter .techTitle b {
+  font-weight: bolder;
+}
+.projectCardFooter ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  list-style: none;
+}
+.projectCardFooter ul li {
+  font-size: 1rem;
+  opacity: 0.75;
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+}
+.projectCardFooter ul li:hover {
+  opacity: 0.9;
+  color: var(--sec);
+  text-decoration-color: var(--sec);
+}
+.projectCardCTA {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0.5em;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 20px;
+}
+.projectCardCTA img {
+  height: 45px;
+}
+
+.cta {
+  position: relative;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+}
+
+.cta:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: var(--third);
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: var(--ffRaleway), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: var(--sec);
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
 }

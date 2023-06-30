@@ -38,14 +38,20 @@ function App() {
   return (
     <main>
       <Router>
-        <Navbar />
-        <Cursor />
-        <SplashScreen />
+        <div className='rootDiv'>
+          <Navbar />
+          <Cursor />
+          <SplashScreen />
+          <Home />
+          <About />
+          <Project />
+          <Contactme />
+        </div>
         <Routes>
-          <Route path='/' element={<Home />} />
+          {/* <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/projects' element={<Project />} />
-          <Route path='/contact' element={<Contactme />} />
+          <Route path='/contact' element={<Contactme />} /> */}
         </Routes>
       </Router>
     </main>

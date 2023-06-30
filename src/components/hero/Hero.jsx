@@ -86,17 +86,18 @@ const Hero = () => {
       </div>
       <div className='imgContainer'>
         {IconsList.map((icon, index) => (
-          <img key={index} src={`assets/icons/${icon}.png`} alt={icon} />
+          <img
+            className='hoverable'
+            key={index}
+            src={`assets/icons/${icon}.png`}
+            alt={icon}
+          />
         ))}
       </div>
       <div className='weather'>
-        <div className='icon'>Weather : {weatherData?.current?.icon}</div>
-        <div className='temperature'>
-          Temperature : {weatherData?.current?.temperature}°C
-        </div>
-        <div className='humidity'>
-          Humidity : {weatherData?.current?.humidity}%
-        </div>
+        <div className='icon'>{weatherData?.current?.icon}</div>
+        <div className='temperature'>{weatherData?.current?.temperature}°C</div>
+        <div className='humidity'>{weatherData?.current?.humidity}%</div>
       </div>
       {/* <div className='SkillScroll'>
         <SkillScroll />

@@ -26,7 +26,7 @@ const Navbar = () => {
 
   const handleClick = (item) => {
     setActiveItem(item);
-    // scrollToSelector(`#${item.toLowerCase()}`);
+    scrollToSelector(`#${item.toLowerCase()}`);
     setisNavOpen(false);
   };
 
@@ -50,7 +50,6 @@ const Navbar = () => {
         <div className='nav-list'>
           {navItems.map((item, index) => (
             <Link
-              to={item.path}
               key={index}
               className={`hoverable nav-items ${
                 activeItem === item.label ? 'active' : ''

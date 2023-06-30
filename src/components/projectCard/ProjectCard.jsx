@@ -5,30 +5,45 @@ import { Link } from 'react-router-dom';
 const ProjectCard = () => {
   return (
     <div className='projectcard-container'>
-      <div className='pc-body'>
-        <div className='projectPreview'>
-          <img
-            src='https://images.pexels.com/photos/1921326/pexels-photo-1921326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-            alt=''
-          />
+      <figure className='projectCardImg'>
+        <img
+          src='https://images.pexels.com/photos/1921326/pexels-photo-1921326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          alt='ProjectImage'
+        />
+      </figure>
+      <div className='projectCardTitle'>
+        <h3>Chat Room</h3>
+        <hr />
+      </div>
+      <p className='projectCardDesc'>
+        An interview test project that aims to verify skills in understanding
+        the task and building UI with React.
+      </p>
+      <div className='projectCardFooter'>
+        <div className='techTitle'>
+          <b>Stack</b>
         </div>
-        <div className='head'>
-          <p className='project-title'>ShoeShop</p>
-          <p className='project-desc'>
-            Feel free to modify the colors by replacing the hexadecimal values
-            with the desired colors of your choice.
-          </p>
-          <div className='callTOAction'>
-            <div className='livePreview'>Live Preview</div>
-            <Link to='https://www.google.com' target='__blank'>
-              <img
-                className='githubLink'
-                src='assets/icons/github.png'
-                width={40}
-              />
-            </Link>
-          </div>
-        </div>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JAVASCRIPT</li>
+        </ul>
+      </div>
+      <div className='projectCardCTA'>
+        <button class='cta hoverable'>
+          <span>visit site</span>
+          <svg viewBox='0 0 13 10' height='10px' width='15px'>
+            <path d='M1,5 L11,5'></path>
+            <polyline points='8 1 12 5 8 9'></polyline>
+          </svg>
+        </button>
+        <Link
+          to={'https://www.github.com'}
+          className='hoverable'
+          target='_blank'
+        >
+          <img src='/assets/icons/github.png' alt='' />
+        </Link>
       </div>
     </div>
   );

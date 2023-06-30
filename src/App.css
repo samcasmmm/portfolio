@@ -43,6 +43,19 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sec);
+  border-radius: 10px;
+}
 main {
   display: flex;
   align-items: center;
@@ -55,6 +68,13 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+.rootDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: inherit;
 }
 
 .cursor {
@@ -84,11 +104,12 @@ a {
   justify-content: center;
   flex-direction: column;
   font-family: var(--ffGoku);
-  margin: 0.5rem;
+  /* margin: 2rem; */
+  margin-top: 1rem;
 }
 .fontTitle-out {
   font-family: var(--ffGoku);
-  font-size: 2rem;
+  font-size: 2.5rem;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px;
   color: var(--sec);
@@ -99,7 +120,7 @@ a {
 }
 .fontTitle {
   font-family: 'Goku';
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #splashScreen {
@@ -107,7 +128,7 @@ a {
   height: 100vh;
   background: #000;
   z-index: 111;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -169,6 +190,9 @@ a {
   }
   .cursor__ball {
     display: none;
+  }
+  .fontEffect {
+    margin-top: 1.5rem;
   }
 }
 @media (max-width: 425px) {
