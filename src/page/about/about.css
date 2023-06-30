@@ -1,10 +1,10 @@
 .aboutContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   width: 100%;
-  height: 93vh;
+  height: 80vh;
   max-width: 1400px;
   padding: 0.5rem;
 }
@@ -15,13 +15,15 @@
   border-radius: 1rem;
   margin: 1rem;
   overflow: hidden;
-}
-.img1 img {
-  width: inherit;
-  height: inherit;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  object-fit: cover;
+  filter: grayscale(100%) blur(3px);
+  transition: all 0.3s ease-in-out;
+}
+.img1:hover {
+  filter: grayscale(0) blur(0px);
 }
 .aboutMe {
   display: flex;
@@ -67,29 +69,15 @@
   font-family: var(--ffGoku);
 }
 .introText h3 span {
-  background: linear-gradient(
-    to right,
-    var(--sec),
-    var(--primary),
-    #d62828,
-    #ff006e,
-    #ffd60a,
-    #ff5400,
-    #06d6a0,
-    #9bf6ff,
-    #7400b8,
-    #9ef01a,
-    #ff0a54,
-    #f20089,
-    #25a18e,
-    #2196f3,
-    #a5ffd6
-  );
+  background: linear-gradient(121.57deg, #fff 18.77%, var(--sec) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 15s infinite linear;
+  animation: gradientAnimation 5s infinite linear;
   background-size: 1000% auto;
   font-family: var(--ffGoku);
+}
+.introText h3 span:hover {
+  animation: gradientAnimation 2s infinite linear;
 }
 .skillTitle {
   position: relative;
@@ -132,12 +120,16 @@
   .aboutContainer {
     flex-direction: column;
     height: auto;
+    align-items: center;
   }
   .img1 {
     width: calc(100% - 80px);
     height: 300px;
     margin: 0rem;
     margin-top: 1rem;
+  }
+  .aboutMe {
+    margin-top: 1.5rem;
   }
   .aboutMe .skill-logos {
     width: calc(100% - 40px);

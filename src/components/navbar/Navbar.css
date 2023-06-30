@@ -81,11 +81,16 @@ nav .nav-list .active {
 @media (max-width: 768px) {
   nav .navContainer {
     padding: 0.5rem 0rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
   }
   nav .nav-list {
     flex-direction: column;
     display: none;
   }
+
   nav .navContainer.expand {
     position: fixed;
     width: 100%;
@@ -119,6 +124,16 @@ nav .nav-list .active {
   }
 
   nav .nav-list .active::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    background: var(--sec);
+    top: 50%;
+    margin-left: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  nav .nav-list .active:hover::after {
     content: '';
     position: absolute;
     width: 100px;

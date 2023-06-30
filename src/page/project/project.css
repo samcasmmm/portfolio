@@ -1,21 +1,69 @@
 .projectContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: flex-start;
+  flex-direction: column;
   width: 100%;
-  height: 93vh;
+  height: max-content;
   padding: 0.5rem;
+  max-width: 1040px;
 }
+
 .projectContent {
-  display: flex;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  row-gap: 1rem;
-  column-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0px;
+  place-items: center;
+  gap: 1rem 1rem;
+  color: white;
+  margin: 1rem;
 }
+
 .projectContent .items {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.projectTitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--ffGoku);
+  margin: 1rem;
+}
+.projectTitle .title-out {
+  font-family: var(--ffGoku);
+  font-size: 2.5rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  color: var(--sec);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+}
+.projectTitle .title {
+  font-family: 'Goku';
+  font-size: 2.5rem;
+}
+
+@media (max-width: 1100px) {
+  .projectContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .projectContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .projectContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
