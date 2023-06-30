@@ -77,6 +77,31 @@ a {
   height: 100vh;
 }
 
+.fontEffect {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--ffGoku);
+  margin: 1rem;
+}
+.fontTitle-out {
+  font-family: var(--ffGoku);
+  font-size: 2rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  color: var(--sec);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+}
+.fontTitle {
+  font-family: 'Goku';
+  font-size: 2rem;
+}
+
 #splashScreen {
   width: 100%;
   height: 100vh;

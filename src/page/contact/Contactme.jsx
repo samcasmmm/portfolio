@@ -3,6 +3,10 @@ import './contactme.css';
 const Contactme = () => {
   return (
     <div className='contactMe-container'>
+      <div className='projectTitle'>
+        <p className='title-out'>Contact</p>
+        <p className='title'>Contact</p>
+      </div>
       <div className='contactme'>
         <p>Contact Me</p>
         <div className='inputs'>
