@@ -2,6 +2,7 @@ import './App.css';
 import Home from './page/home/Home';
 import About from './page/about/About.jsx';
 import Project from './page/project/Project.jsx';
+import ProjectSection from './page/project/ProjectSection.jsx';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cursor from './components/Cursor';

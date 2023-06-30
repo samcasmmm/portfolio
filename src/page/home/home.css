@@ -1,6 +1,10 @@
 .homeContainer {
   width: inherit;
+  height: 90vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .linearGradient {
@@ -16,7 +20,21 @@
   z-index: -1;
 }
 
+@media (max-width: 450px) {
+  .linearGradient {
+    width: 450px;
+    height: 300px;
+    top: -200px;
+  }
+}
 @media (max-width: 425px) {
+  .linearGradient {
+    width: 420px;
+    height: 300px;
+    top: -200px;
+  }
+}
+@media (max-width: 375px) {
   .linearGradient {
     width: 300px;
     height: 300px;
