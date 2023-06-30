@@ -25,8 +25,8 @@ const About = () => {
   return (
     <>
       <div className='projectTitle'>
-        <p className='title-out'>Projects</p>
-        <p className='title'>Projects</p>
+        <p className='title-out'>About</p>
+        <p className='title'>About</p>
       </div>
       <div className='aboutContainer'>
         <img

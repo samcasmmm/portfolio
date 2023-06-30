@@ -84,7 +84,7 @@ a {
   justify-content: center;
   flex-direction: column;
   font-family: var(--ffGoku);
-  margin: 1rem;
+  margin: 0.5rem;
 }
 .fontTitle-out {
   font-family: var(--ffGoku);
